@@ -24,7 +24,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              <Route path="/" element={<LandingPage />} />
+              <Route path="/collegeProject" element={<LandingPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/phonesignup" element={<PhoneSignUp />} />
