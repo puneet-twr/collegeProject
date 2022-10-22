@@ -8,6 +8,7 @@ import PhoneSignUp from "./components/PhoneSignUp";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LandingPage from "./components/LandingPage";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
+import SeatSelection from "./components/SeatSelection/SeatSelection";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/phonesignup" element={<PhoneSignUp />} />
+              <Route path="/selectSeats" element={<SeatSelection />} />
             </Routes>
           </UserAuthContextProvider>
     </div>

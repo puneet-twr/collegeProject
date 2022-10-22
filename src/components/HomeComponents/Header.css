@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 .Header{
     padding: 10px;
-    height: 11vh;
+    /* height: 11vh; */
     /* border: 1px solid red; */
-    display: flex;
-    flex-direction: row;
+    
     justify-content: space-between;
-    background-image: linear-gradient(to right, #770000, #920024, #a20050, #99008c, #5800cf);
+    background-image: linear-gradient(to right top, #770000, #920024, #a20050, #99008c, #5800cf);
+    
     color: white;
     /* border: 1px solid white; */
     box-shadow: 5px 5px white;
@@ -26,5 +26,8 @@
     border: 1px solid white;
     cursor: pointer;
     font-family: 'Comfortaa', cursive;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
 
 }
