@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './SeatSelection.css';
 
-function SeatSelection() {
+function SeatSelection(props) {
 //   const container = document.querySelector('.container');
-// const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+// const seats = document.querySelectorAll('.cinema-seats row- .seat:not(.occupied)');
 // const count = document.getElementById('count');
 // const total = document.getElementById('total');
 // const movieSelect = document.getElementById('movie');
@@ -12,7 +12,7 @@ function SeatSelection() {
 
 //Update total and count
 // function updateSelectedCount() {
-//   const selectedSeats = document.querySelectorAll('.row .seat.selected');
+//   const selectedSeats = document.querySelectorAll('.cinema-seats row- .seat.selected');
 //   const selectedSeatsCount = selectedSeats.length;
 //   count.innerText = selectedSeatsCount;
 //   total.innerText = selectedSeatsCount * ticketPrice;
@@ -26,93 +26,179 @@ const handleSeatClick=(e)=>{
 }
   return (
     <div class="movie-container" >
-    <label>Pick a movie: </label>
+    {/* <label>Pick a movie: </label>
     <select id="movie" >
-      <option value="250">Interstellar (Rs. 250)</option>
-      <option value="200">Kabir Singh (Rs. 200)</option>
+      <option value="250">{props.movieTitle} (Rs. 250)</option> */}
+      {/* <option value="200">Kabir Singh (Rs. 200)</option>
       <option value="150">Duniyadari (Rs. 150)</option>
-      <option value="100">Natsamrat (Rs. 100)</option>
-    </select>
+      <option value="100">Natsamrat (Rs. 100)</option> */}
+    {/* </select> */}
     
-    <ul class="showcase">
+    <div className="movieTitle">{props.movieTitle} (price)</div>
+    {/* <ul class="showcase">
       <li>
-        <div class="seat"></div>
+        <div class="seat refSeat"></div>
         <small>N/A</small>
       </li>
       <li>
-        <div class="seat selected"></div>
+        <div class="seat refSelected"></div>
         <small>Selected</small>
       </li>
       <li>
-        <div class="seat occupied"></div>
+        <div class="seat refOccupied"></div>
         <small>Occupied</small>
       </li>    
-    </ul>
+    </ul> */}
     
     <div class="container" onClick={handleSeatClick}>
       <div class="screen"></div>
       
-      <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
-          <div class="seat"></div>
-        </div>
-      
+      <div className="theatre">
+      <div class="cinema-seats left">
+    <div class="cinema-row row-1">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-2">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-3">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-4">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-5">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-6">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-7">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+  </div>
+
+
+  <div class="cinema-seats right">
+    <div class="cinema-row row-1">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-2">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-3">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-4">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-5">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-6">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+
+    <div class="cinema-row row-7">
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+      <div className="seat"></div>
+    </div>
+  </div>
+      </div>
       <p class="text">
         You have selected <span id="count">0</span> seats for the total price of Rs. <span id="total">0</span>
       </p>

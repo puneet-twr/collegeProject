@@ -4,7 +4,7 @@ import UpcomingMovie from "../MovieCards/UpcomingMovie";
 import "./HomeContent.css";
 import ImageSlider from "./ImageSlider";
 
-function HomeContent({ phone, email }) {
+function HomeContent(props, { phone, email }) {
   const imgUrl = [
     "https://i.ibb.co/1Q2b6m1/black-adam-2021-poster-6173-scaled.jpg",
     "https://i.ibb.co/fS94P5v/black-panther.jpg",
@@ -36,10 +36,15 @@ function HomeContent({ phone, email }) {
     "Physicist J Robert Oppenheimer works with a team of scientists during the Manhattan Project, leading to the development of the atomic bomb.",
     "Vikram Vedha is a 2022 Indian Hindi-language neo-noir action thriller film written-directed by Pushkar–Gayathri, based on their 2017 Tamil film of the same ...",
   ];
+  const handleClick=(movieName)=>{
+    props.isMovieSelected(true);
+    props.selectMovie(movieName);
+  }
   return (
     <div className="HomeContent">
+      {/* <button onClick={handleClick}>click me </button> */}
       <div className="userInfo">
-        You are logged in as <span className="highlight">{email || phone}</span>
+        You are logged in as <span className="highlight">{props.userInfo.email || props.userInfo.phone}</span>
       </div>
       <div className="block">
         <div className="blockTitle">Currently Airing</div>
@@ -48,21 +53,29 @@ function HomeContent({ phone, email }) {
             imgUrl={imgUrl[0]}
             title={Title[0]}
             description={Description[0]}
+            func={props.isMovieSelected}
+            selectMovie={props.selectMovie}
           />
           <MovieCard
             imgUrl={imgUrl[1]}
             title={Title[1]}
             description={Description[1]}
+            func={props.isMovieSelected}
+            selectMovie={props.selectMovie}
           />
           <MovieCard
             imgUrl={imgUrl[2]}
             title={Title[2]}
             description={Description[2]}
+            func={props.isMovieSelected}
+            selectMovie={props.selectMovie}
           />
           <MovieCard
             imgUrl={imgUrl[3]}
             title={Title[3]}
             description={Description[3]}
+            func={props.isMovieSelected}
+            selectMovie={props.selectMovie}
           />
         </div>
       </div>
