@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Recipt from '../Reciept/Recipt';
 import './SeatSelection.css';
 
 function SeatSelection(props) {
@@ -17,15 +18,32 @@ function SeatSelection(props) {
 //   count.innerText = selectedSeatsCount;
 //   total.innerText = selectedSeatsCount * ticketPrice;
 // }
+const [numOfSeats, setNumOfSeats] = useState(0);
+const [proceed, setProceed] = useState(false);
+
+
 const handleSeatClick=(e)=>{
-  if (e.target.classList.contains('seat') &&
-     !e.target.classList.contains('occupied')) {
+  if (e.target.classList.contains('seat') ) {
     e.target.classList.toggle('selected');
     console.log(e.target);
   }
+  if (e.target.classList.contains('selected') && e.target.classList.contains('seat')  ){
+    setNumOfSeats(numOfSeats+1);
+  }
+  else if(!e.target.classList.contains('selected') && e.target.classList.contains('seat')  ){
+    setNumOfSeats(numOfSeats-1);
+  }
+}
+
+const handleProceed=(e)=>{
+  setProceed(true);
 }
   return (
-    <div class="movie-container" >
+    <div className="ieoi">
+      {
+        !proceed && 
+        <>
+        <div class="movie-container" >
     {/* <label>Pick a movie: </label>
     <select id="movie" >
       <option value="250">{props.movieTitle} (Rs. 250)</option> */}
@@ -34,7 +52,7 @@ const handleSeatClick=(e)=>{
       <option value="100">Natsamrat (Rs. 100)</option> */}
     {/* </select> */}
     
-    <div className="movieTitle">{props.movieTitle} (price)</div>
+    <div className="movieTitle">{props.movieTitle} (₹ 250)</div>
     {/* <ul class="showcase">
       <li>
         <div class="seat refSeat"></div>
@@ -200,11 +218,26 @@ const handleSeatClick=(e)=>{
   </div>
       </div>
       <p class="text">
-        You have selected <span id="count">0</span> seats for the total price of Rs. <span id="total">0</span>
+        You have selected <span id="count">{numOfSeats}</span> seats for the total price of Rs. <span id="total">{250*numOfSeats}</span>
       </p>
+      {
+        numOfSeats ? <button type="button" class="btn btn-primary btn-lg btn-block" onClick={handleProceed}>Proceed to pay</button>: <></>
+        
+      }
     </div>
+    
   </div>
+        </>
+      }
+      {
+        proceed && 
+        <>
+          <Recipt movieName={props.movieTitle} seats={numOfSeats}/>
+        </>
+      }
+    </div>
+    
   )
 }
 
-export default SeatSelection
+export default SeatSelection;
